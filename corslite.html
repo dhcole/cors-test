@@ -3,7 +3,7 @@
 <head>
     <meta charset=utf-8 />
     <title></title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="jquery.js"></script>
     <script src="corslite.js"></script>
 </head>
 <body>
@@ -16,9 +16,8 @@
         its callback passes an error and response xhr object)
       */
       xhr('http://static.devseed.com/privacyPolicy.json', function(error, response) {
-
-        /* get the response text and parse it to JSON */
-        var d = JSON.parse(response.response);
+        /* Parse JSON from xhr.responseText */
+        var d = JSON.parse(response.responseText);
         $('h1').html(d.title);
         $('#content').html(d.meal);
       });
